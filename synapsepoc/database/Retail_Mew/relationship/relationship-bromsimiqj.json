@@ -1,0 +1,26 @@
+{
+	"name": "relationship-bromsimiqj",
+	"properties": {
+		"Name": "relationship-bromsimiqj",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Retail_Mew"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "BrandCategory",
+		"ToTableName": "Brand",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BrandCategoryId",
+				"ToColumnName": "BrandCategoryId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"BrandCategory.cdm.json/BrandCategory\",\"toEntity\":\"Brand.cdm.json/Brand\",\"joinPairs\":[{\"fromAttribute\":\"BrandCategoryId\",\"toAttribute\":\"BrandCategoryId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

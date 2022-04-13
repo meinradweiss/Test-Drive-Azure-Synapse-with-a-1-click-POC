@@ -1,0 +1,26 @@
+{
+	"name": "relationship-olsuqzaick",
+	"properties": {
+		"Name": "relationship-olsuqzaick",
+		"EntityType": "RELATIONSHIP",
+		"Namespace": {
+			"DatabaseName": "Retail_Mew"
+		},
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"FromTableName": "Brand",
+		"ToTableName": "RetailProduct",
+		"ColumnRelationshipInformations": [
+			{
+				"FromColumnName": "BrandId",
+				"ToColumnName": "PrimaryBrandId"
+			}
+		],
+		"RelationshipType": 0,
+		"Properties": {
+			"DerivedModelRelationshipInfo": "{\"baseRelationship\":{\"fromEntity\":\"Brand.cdm.json/Brand\",\"toEntity\":\"RetailProduct.cdm.json/RetailProduct\",\"joinPairs\":[{\"fromAttribute\":\"BrandId\",\"toAttribute\":\"PrimaryBrandId\"}]}}"
+		}
+	},
+	"type": "RELATIONSHIP"
+}

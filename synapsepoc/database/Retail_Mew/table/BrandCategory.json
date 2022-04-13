@@ -1,0 +1,106 @@
+{
+	"name": "BrandCategory",
+	"properties": {
+		"Name": "BrandCategory",
+		"EntityType": "TABLE",
+		"Namespace": {
+			"DatabaseName": "Retail_Mew"
+		},
+		"Description": "An organization-defined classification or categorization of products or services that address the same consumer needs and have similar attributes and benefits.\n\nThe Brand Category most likely corresponds to some generic division of products in the Product family such as \"toothpaste\", \"deodorant\", \"vitamin supplements\"...\n\nThere are three Product branding strategies:\n\n1.  Individual branding, which creates individual brand names and identities for each Product.\n\n2.  Family branding, which uses the same brand name for two or more products.\n\n3.  Combination branding, which enables products to carry both family brand names and individual brand names.   Breakfast cereals often utilize this approach.\n\nA brand is name, term, sign, symbol or design or a combination of these which identify the goods or services and differentiate them from those of competitors' \n\nA Trade mark is a brand or some part of the brand that is given legal protection because it is capable of exclusive appropriation and representation.\n\nManufacturers can use their own brands (known as Manufacturers' brands) or brands of their distributors (Distributors' brands). \n\nManufacturers/ distributors use brand names for a variety of reasons ranging from simple identification purposes to having legal protection for unique features of the products from imitations.\n\nBrands help consumers recognize certain quality parameters. In some cases, brands are just used to endow the product with unique story and character which itself can be a basis for product differentiation. \n\nIndividual brand have their own identity and the corporate or common name is not used to promote its equity. \n\nIndividual branding requires more expensive advertising and brand extensive brand creation investments..  By extension, each new brand does not benefit from the positive perceptions of earlier brands.\n\nBy contrast, family branding has several advantages.\n\nEach new product is quickly associated with the other products and brand in terms of quality and benefits.\n\nReduced or eliminated time for name identification and advertising for name recognition purposes.",
+		"TableType": "EXTERNAL",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"StorageDescriptor": {
+			"Columns": [
+				{
+					"Name": "BrandCategoryId",
+					"Description": "The unique identifier of a Brand Category.",
+					"BaseAttributeReference": {
+						"Entity": "BrandCategory.cdm.json/BrandCategory",
+						"Name": "BrandCategoryId"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "integer",
+						"IsComplexType": false,
+						"IsNullable": false,
+						"Properties": {
+							"HIVE_TYPE_STRING": "integer"
+						}
+					}
+				},
+				{
+					"Name": "BrandCategoryName",
+					"Description": "The name of the Brand Category.",
+					"BaseAttributeReference": {
+						"Entity": "BrandCategory.cdm.json/BrandCategory",
+						"Name": "BrandCategoryName"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 128,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				},
+				{
+					"Name": "BrandCategoryDescription",
+					"Description": "The description of the Brand Category.",
+					"BaseAttributeReference": {
+						"Entity": "BrandCategory.cdm.json/BrandCategory",
+						"Name": "BrandCategoryDescription"
+					},
+					"OriginDataTypeName": {
+						"TypeName": "string",
+						"IsComplexType": false,
+						"IsNullable": true,
+						"Length": 512,
+						"Properties": {
+							"HIVE_TYPE_STRING": "string"
+						}
+					}
+				}
+			],
+			"Format": {
+				"InputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+				"OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+				"FormatType": "parquet",
+				"SerializeLib": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+				"Properties": {
+					"path": "abfss://dlsmewpocfs1@mewsbnjahkks3c6opoc.dfs.core.windows.net/Retail_Mew/BrandCategory",
+					"FormatTypeSetToDatabaseDefault": true
+				}
+			},
+			"Source": {
+				"Provider": "ADLS",
+				"Location": "abfss://dlsmewpocfs1@mewsbnjahkks3c6opoc.dfs.core.windows.net/Retail_Mew/BrandCategory",
+				"Properties": {
+					"LinkedServiceName": "mewsbnjahkks3c6opocws1-WorkspaceDefaultStorage",
+					"LocationSetToDatabaseDefault": true
+				}
+			},
+			"Properties": {
+				"textinputformat.record.delimiter": ",",
+				"compression": "{\"type\":\"None\",\"level\":\"optimal\"}",
+				"derivedModelAttributeInfo": "{\"attributeReferences\":{\"BrandCategoryId\":{\"entity\":\"BrandCategory.cdm.json/BrandCategory\",\"name\":\"BrandCategoryId\"},\"BrandCategoryName\":{\"entity\":\"BrandCategory.cdm.json/BrandCategory\",\"name\":\"BrandCategoryName\"},\"BrandCategoryDescription\":{\"entity\":\"BrandCategory.cdm.json/BrandCategory\",\"name\":\"BrandCategoryDescription\"}}}"
+			},
+			"Compressed": false,
+			"IsStoredAsSubdirectories": false
+		},
+		"Properties": {
+			"DerivedModelEntityInfo": "{\"entityDirectives\":{\"baseEntityReference\":{\"name\":\"BrandCategory\",\"path\":\"BrandCategory.cdm.json/BrandCategory\"},\"description\":\"An organization-defined classification or categorization of products or services that address the same consumer needs and have similar attributes and benefits.\\n\\nThe Brand Category most likely corresponds to some generic division of products in the Product family such as \\\"toothpaste\\\", \\\"deodorant\\\", \\\"vitamin supplements\\\"...\\n\\nThere are three Product branding strategies:\\n\\n1.  Individual branding, which creates individual brand names and identities for each Product.\\n\\n2.  Family branding, which uses the same brand name for two or more products.\\n\\n3.  Combination branding, which enables products to carry both family brand names and individual brand names.   Breakfast cereals often utilize this approach.\\n\\nA brand is name, term, sign, symbol or design or a combination of these which identify the goods or services and differentiate them from those of competitors' \\n\\nA Trade mark is a brand or some part of the brand that is given legal protection because it is capable of exclusive appropriation and representation.\\n\\nManufacturers can use their own brands (known as Manufacturers' brands) or brands of their distributors (Distributors' brands). \\n\\nManufacturers/ distributors use brand names for a variety of reasons ranging from simple identification purposes to having legal protection for unique features of the products from imitations.\\n\\nBrands help consumers recognize certain quality parameters. In some cases, brands are just used to endow the product with unique story and character which itself can be a basis for product differentiation. \\n\\nIndividual brand have their own identity and the corporate or common name is not used to promote its equity. \\n\\nIndividual branding requires more expensive advertising and brand extensive brand creation investments..  By extension, each new brand does not benefit from the positive perceptions of earlier brands.\\n\\nBy contrast, family branding has several advantages.\\n\\nEach new product is quickly associated with the other products and brand in terms of quality and benefits.\\n\\nReduced or eliminated time for name identification and advertising for name recognition purposes.\",\"primaryKey\":[\"BrandCategoryId\"],\"projectionInfo\":{\"attributes\":[{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BrandCategory.cdm.json/BrandCategory\",\"name\":\"BrandCategoryId\"},\"dataType\":\"integer\",\"description\":\"The unique identifier of a Brand Category.\",\"isNullable\":false,\"name\":\"BrandCategoryId\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BrandCategory.cdm.json/BrandCategory\",\"name\":\"BrandCategoryName\"},\"dataType\":\"string\",\"dataTypeLength\":128,\"description\":\"The name of the Brand Category.\",\"isNullable\":true,\"name\":\"BrandCategoryName\"},{\"type\":\"Existing\",\"attributeReference\":{\"entity\":\"BrandCategory.cdm.json/BrandCategory\",\"name\":\"BrandCategoryDescription\"},\"dataType\":\"string\",\"dataTypeLength\":512,\"description\":\"The description of the Brand Category.\",\"isNullable\":true,\"name\":\"BrandCategoryDescription\"}]}}}",
+			"Description": "An organization-defined classification or categorization of products or services that address the same consumer needs and have similar attributes and benefits.\n\nThe Brand Category most likely corresponds to some generic division of products in the Product family such as \"toothpaste\", \"deodorant\", \"vitamin supplements\"...\n\nThere are three Product branding strategies:\n\n1.  Individual branding, which creates individual brand names and identities for each Product.\n\n2.  Family branding, which uses the same brand name for two or more products.\n\n3.  Combination branding, which enables products to carry both family brand names and individual brand names.   Breakfast cereals often utilize this approach.\n\nA brand is name, term, sign, symbol or design or a combination of these which identify the goods or services and differentiate them from those of competitors' \n\nA Trade mark is a brand or some part of the brand that is given legal protection because it is capable of exclusive appropriation and representation.\n\nManufacturers can use their own brands (known as Manufacturers' brands) or brands of their distributors (Distributors' brands). \n\nManufacturers/ distributors use brand names for a variety of reasons ranging from simple identification purposes to having legal protection for unique features of the products from imitations.\n\nBrands help consumers recognize certain quality parameters. In some cases, brands are just used to endow the product with unique story and character which itself can be a basis for product differentiation. \n\nIndividual brand have their own identity and the corporate or common name is not used to promote its equity. \n\nIndividual branding requires more expensive advertising and brand extensive brand creation investments..  By extension, each new brand does not benefit from the positive perceptions of earlier brands.\n\nBy contrast, family branding has several advantages.\n\nEach new product is quickly associated with the other products and brand in terms of quality and benefits.\n\nReduced or eliminated time for name identification and advertising for name recognition purposes.",
+			"DisplayFolderInfo": "{\"name\":\"Product\",\"colorCode\":\"#BD4B37\"}",
+			"PrimaryKeys": "BrandCategoryId",
+			"spark.sql.sources.provider": "parquet",
+			"sql:IsAppendOnly": false
+		},
+		"Retention": 0,
+		"Temporary": false,
+		"IsRewriteEnabled": false
+	},
+	"type": "TABLE"
+}
